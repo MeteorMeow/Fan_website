@@ -1,6 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import Characters from "./character";import Model from "./Model";
+import Characters from "./character";
+import Model from "./Model";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           element={
             <div className='home-container'>
               <div className='cover'>
-                <img src='/cover.jpg' alt='Check your internet' className="img" />
+                <img src={process.env.PUBLIC_URL + "/cover.jpg"} alt='Check your internet' className="img" />
                 <div className="text-box">
                   <h1 className="title">Frieren: Beyond The Journey's End</h1>
                   <p className="rating">⭐ IMDb: 9.1/10</p>
@@ -37,11 +38,11 @@ function App() {
         />
         <Route path="/character" element={
           <div className="page-container">
-          <Characters />
+            <Characters />
           </div>} />
         <Route path="/model" element={
           <div className="page-container">
-          <Model />
+            <Model />
           </div>} />
       </Routes>
     </div>

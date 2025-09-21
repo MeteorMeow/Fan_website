@@ -8,80 +8,78 @@ export default function Characters() {
   const characterData = [
     {
       name: "Frieren",
-      img: "./frieren.webp",
+      img: process.env.PUBLIC_URL + "/Frieren.webp",
       hair: "Silver",
       debut: "Chapter 1",
       tags: ["Elf", "Mage"],
     },
     {
       name: "Himmel",
-      img: "/Himmel.webp",
+      img: process.env.PUBLIC_URL +  "/Himmel.webp",
       hair: "Blue",
       debut: "Chapter 1",
       tags: ["Human", "Hero"],
     },
     {
       name: "Eisen",
-      img: "/Eisen.jpeg",
+      img: process.env.PUBLIC_URL +  "/Eisen.jpeg",
       hair: "Brown",
       debut: "Chapter 1",
       tags: ["Dwarf", "Vanguard"],
     },
     {
       name: "Heiter",
-      img: "/Heiter.webp",
+      img: process.env.PUBLIC_URL +  "/Heiter.webp",
       hair: "Green",
       debut: "Chapter 1",
       tags: ["Human", "Priest","Alcoholic"],
     },
     {
       name: "Fern",
-      img: "/Fern.webp",
+      img: process.env.PUBLIC_URL +  "/Fern.webp",
       hair: "Purple",
       debut: "Chapter 2",
       tags: ["Human", "Mage"],
     },
     {
       name: "Stark",
-      img: "/Stark.webp",
+      img: process.env.PUBLIC_URL +  "/Stark.webp",
       hair: "Red with Black Roots",
       debut: "Chapter 10",
       tags: ["Human", "Warrior"],
     },
     {
       name: "Goddess of Creation",
-      img: "/Goddess_of_Creation.webp",
+      img: process.env.PUBLIC_URL +  "/Goddess_of_Creation.webp",
       hair: "White",
       debut: "Chapter 24",
       tags: ["God", "Creator"],
     },
     {
       name: "Flamme",
-      img: "/Flamme.webp",
+      img: process.env.PUBLIC_URL +  "/Flamme.webp",
       hair: "Orange",
       debut: "Chapter 7",
       tags: ["Human", "Great Mage"],
     },
-
   ];
-   useEffect(() => {
+  useEffect(() => {
     const cards = containerRef.current.querySelectorAll(".character-card");
-
     cards.forEach((card, i) => {
       gsap.to(card, {
-        y: -50, 
+        y: -50,
         scrollTrigger: {
           trigger: card,
-          start: "top bottom", 
-          end: "bottom top",   
-          scrub: true,         
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
         },
       });
     });
   }, []);
 
   return (
-     <div className="character-parallax-container" ref={containerRef}>
+    <div className="character-parallax-container" ref={containerRef}>
       <div className="character-container">
         {characterData.map((char, index) => (
           <div key={index} className="character-card">
