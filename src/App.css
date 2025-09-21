@@ -1,38 +1,224 @@
-.App {
-  text-align: center;
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Navbar {
+    background-color: rgb(179, 179, 179); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-end;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    padding-right: 60px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.NavButton {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(212, 212, 212);
+    color: rgb(192, 139, 33);
+    text-decoration: none;
+    font-size: large;
+    border-radius: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
+.NavButton:hover {
+    background-color: #fde7cc;
+    color: rgb(98, 98, 98);
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+    transition: color 0.7s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.page-container {
+    padding-top: 80px; 
+    
+}
+
+.home-container {
+    min-height: 100vh;
+    background-image: url('/public/bg_home.webp');
+    background-size: cover;
+    background-position: center;
+    padding: 5vw;
+    padding-top: 90px; 
+}
+
+.cover {
+    display: flex;
+    gap: 2vw;
+    background-color: rgba(212,212,212,0.8);
+    border-radius: 20px;
+    padding: 2vw;
+    align-items: flex-start;
+}
+
+.img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 5px;
+    border: 2px solid #fde7cc;
+    flex-shrink: 0;
+}
+
+.text-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+    max-width: 60%;
+}
+
+.title {
+    font-size: 3vw;
+    color: #333;
+    text-shadow: 2px 2px 4px #aaa;
+    margin: 0;
+}
+
+.rating {
+    font-size: 1.5vw;
+    color: #444;
+    margin: 0;
+}
+
+.genres {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background-color: #fde7cc;
+    color: #333;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 1vw;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+.summary {
+    font-size: 1.2vw;
+    color: #555;
+    line-height: 1.5;
+    margin-top: 5px;
+}
+.character-parallax-container {
+  background-image: url('/public/model_bg.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
   min-height: 100vh;
+  padding: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.character-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.character-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(240, 240, 240, 0.9);
+    border-radius: 15px;
+    padding: 15px;
+    width: 220px;
+    height: 300px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    margin: 15px;
+}
+
+.character-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.character-card img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: contain; 
+    border-radius: 10px;
+    border: 2px solid #fde7cc;
+    margin-bottom: 10px;
+}
+
+.character-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.character-info {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 3px 0;
+}
+
+.character-tag {
+    display: inline-block;
+    background-color: #fde7cc;
+    border-radius: 12px;
+    padding: 3px 8px;
+    font-size: 0.8rem;
+    margin: 3px 3px 0 3px;
+    color: #333;
+}
+
+
+
+.model-page {
+  position: relative;
+  width: 100%;
+  min-height: 150vh; /* enough scroll space for parallax */
+  overflow-x: hidden; /* prevent horizontal scroll */
+  padding-top: 20px; /* space for navbar */
+  box-sizing: border-box;
+}
+
+.model-bg {
+  background-image: url("/public/model_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  position: fixed; /* fix so it doesn't cause dual scrollbar */
+  top: 40px; /* offset by navbar height */
+  left: 0;
+  width: 100vw;
+  height: 120vh; /* fill remaining height */
+  z-index: 0;
+  transform: translateY(0);
+}
+
+.model-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+.iframe-container {
+  width: 70vw;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
