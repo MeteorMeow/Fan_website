@@ -182,9 +182,9 @@ body {
 .model-page {
   position: relative;
   width: 100%;
-  min-height: 150vh; /* enough scroll space for parallax */
-  overflow-x: hidden; /* prevent horizontal scroll */
-  padding-top: 20px; /* space for navbar */
+  min-height: 150vh; 
+  overflow-x: hidden; 
+  padding-top: 20px; 
   box-sizing: border-box;
 }
 
@@ -192,11 +192,11 @@ body {
   background-image: url("/public/model_bg.jpg");
   background-size: cover;
   background-position: center;
-  position: fixed; /* fix so it doesn't cause dual scrollbar */
-  top: 40px; /* offset by navbar height */
+  position: fixed; 
+  top: 40px; 
   left: 0;
   width: 100vw;
-  height: 120vh; /* fill remaining height */
+  height: 120vh; 
   z-index: 0;
   transform: translateY(0);
 }
