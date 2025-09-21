@@ -16,7 +16,7 @@ function App() {
           element={
             <div className='home-container'>
               <div className='cover'>
-                <img src='public/cover.jpg' alt='Check your internet' className="img" />
+                <img src='/cover.jpg' alt='Check your internet' className="img" />
                 <div className="text-box">
                   <h1 className="title">Frieren: Beyond The Journey's End</h1>
                   <p className="rating">⭐ IMDb: 9.1/10</p>
